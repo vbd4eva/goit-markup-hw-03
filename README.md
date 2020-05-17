@@ -1,4 +1,4 @@
-# -goit-markup-hw-02
+<!--# -goit-markup-hw-02
 
 ## Структура html
 
@@ -72,3 +72,4 @@
             h2.portfolio-item-title
             p.portfolio-item-text
             p.portfolio-item-tag
+-->
