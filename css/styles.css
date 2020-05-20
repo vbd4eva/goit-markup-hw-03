@@ -71,7 +71,9 @@
     2. background-color секции "Наша команда"
 */
 
-/*
+/* eeeeee  --portfolio-cell-border: #eeeeee;*/
+
+/* 
 (+) rgba(255, 255, 255, 0.6); - цвет текста <address> в футере
 
 rgba(255, 255, 255, 0.1)
@@ -91,6 +93,17 @@ rgba(47, 48, 58, 0.8);
 font-family: 'Roboto', sans-serif;
 font-family: 'Raleway', sans-serif;
 */
+
+/*html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}*/
+
 :root {
   --color-text-primary: #757575;
   --color-text-title: #212121;
@@ -104,16 +117,8 @@ font-family: 'Raleway', sans-serif;
 
   --color-footer-background: #2f303a;
   --color-copyright: rgba(255, 255, 255, 0.4);
-}
 
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+  --portfolio-cell-border: #eeeeee;
 }
 
 /* Селекторы элемента */
@@ -121,10 +126,15 @@ body {
   margin: 0;
   color: var(--color-text-primary);
   background-color: var(--color-background-primary);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.03em;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 a {
   text-decoration: none;
@@ -135,6 +145,7 @@ h2,
 h3,
 p,
 ul {
+  padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -153,11 +164,14 @@ li {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .logo {
   display: block;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
+  letter-spacing: 0.03em;
 }
 .btn-accent {
   display: inline-block;
@@ -187,7 +201,7 @@ li {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.62;
+  line-height: 1.63;
   text-align: center;
   letter-spacing: 0.03em;
 }
@@ -212,7 +226,6 @@ li {
 /* стандартная Строчка и Сетка */
 .grid-row,
 .grid-table {
-  padding-left: 0px;
 }
 /* ( 30px между ) */
 .grid-row > .grid-item + .grid-item {
@@ -231,7 +244,7 @@ li {
   display: flex;
 }
 .social-list > .social-item + .social-item {
-  margin-left: 11px;
+  margin-left: 10px;
 }
 .social-link {
   display: block;
@@ -262,11 +275,11 @@ li {
   line-height: 1.2;
 }
 .site-nav {
-  margin-left: 80px;
+  margin-left: 85px;
   padding-left: 0px;
 }
 .site-nav-item + .site-nav-item {
-  margin-left: 38px;
+  margin-left: 50px;
 }
 .site-nav-link {
   display: block;
@@ -298,6 +311,7 @@ li {
   padding-bottom: 28px;
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 }
 
 .page-footer .logo {
@@ -322,7 +336,6 @@ li {
 
 .page-footer .subject {
   display: block;
-  margin-top: 8px;
   margin-bottom: 21px;
   font-weight: bold;
   line-height: 1.14;
@@ -377,10 +390,8 @@ li {
 /* Особенности */
 .studio-features {
   display: flex;
-  padding-top: 94px;
-  padding-bottom: 94px;
 }
-.studio-features > .item {
+.features-item {
   width: calc((100% - 90px) / 4);
 }
 
@@ -407,13 +418,13 @@ li {
 }
 /* Чем мы занимаемся */
 .studio-activity {
-  padding-bottom: 94px;
 }
 .activity-list {
   display: flex;
 }
 .activity-item {
   border-radius: 4px;
+  overflow: hidden;
 }
 .activity-icon {
   display: block;
@@ -499,19 +510,23 @@ li {
 }
 .portfolio-item {
   width: calc((100% - 30px * 2) / 3);
-  padding-bottom: 20px;
   background-color: var(--color-white);
-  border: 1px solid #eeeeee;
+  overflow: hidden;
   border-radius: 5px;
 }
 .portfolio-icon {
-  display: block;
-  max-width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 .porfolio-cell {
   padding: 20px 24px;
+  border: 1px solid var(--portfolio-cell-border);
+  border-top: none;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 .portfolio-title {
+  margin-bottom: 4px;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
